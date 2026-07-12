@@ -1,4 +1,22 @@
-asgiref==3.11.1
+# Core Django & Dependencies
 Django==6.0.7
-pillow==12.3.0
+asgiref==3.11.1
 sqlparse==0.5.5
+
+# Image Processing (Required if your apps handle image uploads)
+pillow==12.3.0
+
+# API & Authentication
+djangorestframework
+djangorestframework-simplejwt
+django-cors-headers
+
+# Environment Management
+python-dotenv
+
+# Production Server Setup
+gunicorn
+
+# Database (Kept here so it is ready when you switch to PostgreSQL)
+psycopg2-binary
+dotenv
