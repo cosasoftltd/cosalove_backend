@@ -9,7 +9,7 @@ load_dotenv(BASE_DIR / '.env')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['api.love.cosasoft.org']
+ALLOWED_HOSTS = ['api.love.cosasoft.org','love.cosasoft.org']
 CORS_ALLOWED_ORIGINS = ["https://love.cosasoft.org"]
 
 CORS_ALLOW_HEADERS = [
