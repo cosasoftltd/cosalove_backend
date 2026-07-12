@@ -12,6 +12,17 @@ DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = ['api.love.cosasoft.org']
 CORS_ALLOWED_ORIGINS = ["https://love.cosasoft.org"]
 
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "authorization",
+    "content-type",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
