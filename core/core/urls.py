@@ -10,7 +10,7 @@ urlpatterns = [
     path('api/users/',include('apps.users.urls')),
     path('api/dossiers/',include('apps.dossiers.urls')),
     path('api/matches/',include('apps.matches.urls')),
-    path('api/chat/',include('apps.chat.urls'))
+    path('api/chat/',include('apps.chat.urls')),
 ]
 
 
