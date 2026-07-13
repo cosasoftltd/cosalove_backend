@@ -1,0 +1,34 @@
+name: Deploy Cosalove Backend to Prod
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Repository Code
+              uses: actions/checkout@v4
+            
+            - name: Execute Remote Deployment Script via SSH
+              uses: appleboy/ssh-action@v1.0.3
+              with:
+                host: ${{secrets.SSH_HOST}}
+                username: ${{secrets.SSH_USER}}
+                key: ${{secrets.SSH_KEY}}
+                port: 22
+                scripts: |
+                    # 1. Navigate to your app directory
+                    cd /cosalove/cosalove_backend
+
+                    # 2. Ensure your execution script has the right permissions
+                    chmod +x deploy.sh
+
+                    # 3. Fire up your deployment script
+                    ./deploy.sh
+
+                    # 4. Safely reload yout background system daemon
+                    sudo systemctl restart gunicorn
